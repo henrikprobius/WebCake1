@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebCake1.Pages.Products
+namespace WebCake1.Pages
 {
-    public class AddProductModel : PageModel
+    public class AboutModel : PageModel
     {
         public void OnGet()
         {

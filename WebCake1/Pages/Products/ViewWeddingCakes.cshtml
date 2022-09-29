@@ -1,0 +1,44 @@
+﻿@page "/products/weddingcakes"
+@model WebCake1.Pages.Products.ViewWeddingCakesModel
+@{
+    ViewData["Title"] = "WeddingCakes";
+}
+<h1>Weddingcakes</h1>
+<hr />
+
+<form method="POST">
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Size</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>    
+        @for (int i = 0; i < @Model._cakes.Count; i++)
+        {
+            <tr>
+                <td> <input type="hidden" asp-for="@Model._cakes[i].Id" value="@Model._cakes[i].Id" />  </td>
+
+                <td><img src="~/images/@Model._cakes[i].ImageFileName" width="80" height="80" /> </td>
+                <td> @Model._cakes[i].Title</td>
+                <td> @Model._cakes[i].Description</td>
+                <td>@Model._cakes[i].Price</td>
+                <td>
+                    <select asp-for="@Model._cakes[i].Size" asp-items="Html.GetEnumSelectList<WebCake1.Models.CakeSize>()"></select>
+                </td>
+
+                <td> <input type="number" asp-for="@Model._cakes[i].Quantity" value="0" min=0 />  </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+    <input type="Submit">
+</form>

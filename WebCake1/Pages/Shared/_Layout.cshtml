@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebCake1</title>
+    <title>@ViewData["Title"] - WebCakeGuru</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebCake1.styles.css" asp-append-version="true" />
@@ -12,19 +12,41 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">WebCake1</a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <li>
+                            <img src="~/images/logo.jpg" width="40" height="40" />
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" asp-page="/products/viewcupcakes">View Cupcakes</a></li>
+                                <li><a class="dropdown-item" asp-page="/products/viewweddingcakes">View Weddingcakes</a></li>
+                            </ul>
+                        </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Contact">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/products/orders">Orders</a>
+                        </li>
+                        
+
                     </ul>
                 </div>
             </div>
@@ -36,10 +58,30 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - WebCake1 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="border-top footer text-muted text-center">
+
+
+        <div class="row">
+            <div class="col-md-4">
+                &copy; 2022 - WebCakeGuru - <a href="mailto:email@example.com?subject=Mail from our Website">Send Email</a>
+
+            </div>
+            <div class="col-md-4">
+                <a href="https://facebook.com/munamiicupcakes">
+                    <img border="0" src="~/images/facebook_logo.jpg" target="_blank" width="22" height="22">munamiicupcakes
+                </a>
+            </div>
+            <div class="col-md-4">
+
+                <a href="https://instagram.com/munamii.cakery">
+                    <img border="0" src="~/images/Instagram_logo.png" target="_blank" width="22" height="22">munamii.cakery
+                </a>
+                
+            </div>
+
         </div>
+
+
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

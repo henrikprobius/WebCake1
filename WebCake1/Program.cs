@@ -1,11 +1,14 @@
+using WebCake1.DataRepository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
-//alla som startar med Use.. är middelware
+//alla som startar med Use.. är middleware
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
